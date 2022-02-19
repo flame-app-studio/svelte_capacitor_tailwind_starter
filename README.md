@@ -25,6 +25,12 @@ Create lighting fast cross platform apps with this Svelte and Capacitor starter.
 
 > **dev ->** watch source code and hot reload during development
 
+> **build ->** build the web version of your app
+
+> **dev:android ->** run web and android with hot reload
+
+> **dev:ios ->** run web and ios with hot reload
+
 > **check ->** lint typescript
 
 > **preview ->** preview your procution build in browser

@@ -16,7 +16,16 @@
 		"open:ios:project": "npm run build && npm run sync && npx cap open ios",
 		"run:ios:simualtor": "npm run build && npm run sync && npx cap run ios",
 		"check": "svelte-check --tsconfig ./tsconfig.json",
-		"preview": "vite preview"
+		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
+		"preview": "vite preview",
+		"lint": "prettier --ignore-path .gitignore --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
+		"format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. .",
+		"build:android": "run-s build cap-run:android",
+		"build:ios": "run-s build cap-run:ios",
+		"cap-run:android": "cap sync android && cap open android",
+		"cap-run:ios": "cap sync ios && cap open ios",
+		"dev:ios": "run-p dev cap-run:ios",
+		"dev:android": "run-p dev cap-run:android"
 	},
 	"dependencies": {
 		"@capacitor/android": "^3.4.0",
@@ -41,6 +50,7 @@
 		"eslint-plugin-svelte3": "^3.4.0",
 		"husky": "^7.0.4",
 		"mdi-svelte": "^1.1.2",
+		"npm-run-all": "^4.1.5",
 		"postcss": "^8.4.6",
 		"prettier": "^2.5.1",
 		"prettier-plugin-svelte": "^2.6.0",
